@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="label_business_cards">Cartão de Visitas</string>
+    <string name="new_card">Novo cartão</string>
+    <string name="label_nome">Insira o nome</string>
+    <string name="label_telefone">Insira o telefone</string>
+    <string name="label_email">Insira o e-mail</string>
+    <string name="label_cor">Insira a cor</string>
 </resources>
