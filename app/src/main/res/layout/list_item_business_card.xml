@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:clipChildren = "false"
-    >
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false">
 
     <com.google.android.material.card.MaterialCardView
             android:id="@+id/cv_card"
@@ -17,10 +15,9 @@
             android:checkable="true"
             android:clickable="true"
             android:focusable="true"
-            app:cardCornerRadius="16dp"
+            app:cardCornerRadius="8dp"
 
-            app:cardElevation="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardElevation="16dp"
             app:layout_constraintDimensionRatio="3.5:2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +27,7 @@
                 android:id="@+id/cl_front"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/card_backgroud"
                 android:padding="12dp">
 
             <TextView
@@ -37,17 +35,19 @@
                     style="@style/TextAppearance.MaterialComponents.Headline6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Wanderley de Macedo Beserra filho" />
+                    tools:text="Wanderley de Macedo Beserra Filho" />
 
             <TextView
                     android:id="@+id/tv_phone"
                     style="@style/TextAppearance.MaterialComponents.Subtitle1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_name"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView9"
                     tools:text="(XX) XXXX-XXXX" />
 
             <TextView
@@ -55,19 +55,61 @@
                     style="@style/TextAppearance.MaterialComponents.Subtitle1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_phone"
-                    tools:text="email@exemplo.com.br" />
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_phone"
+                    app:layout_constraintStart_toEndOf="@+id/imageView8"
+                    tools:text="github.com.br/derleymad" />
 
             <TextView
                     android:id="@+id/tv_company"
                     style="@style/TextAppearance.MaterialComponents.Subtitle1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
 
-                    app:layout_constraintEnd_toEndOf="parent"
-                    tools:text="Wanderley Corporation" />
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_name"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                    tools:text="Derley's Corp." />
+
+            <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_company"
+                    app:layout_constraintStart_toEndOf="@+id/tv_company"
+                    app:layout_constraintTop_toTopOf="@+id/tv_company"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/ic_business" />
+
+            <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_email"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_email" />
+
+            <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_phone" />
+
+            <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+                    app:layout_constraintStart_toEndOf="@+id/tv_name"
+                    app:layout_constraintTop_toTopOf="@+id/tv_name"
+                    app:srcCompat="@drawable/ic_person" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -83,6 +125,7 @@
                     android:id="@+id/btn_delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="?attr/actionBarItemBackground"
                     android:contentDescription="@string/delete_this_business_card"
                     android:src="@drawable/ic_delete"
                     app:layout_constraintBottom_toBottomOf="@id/btn_edit"
@@ -105,14 +148,14 @@
                     android:id="@+id/btn_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="?attr/actionBarItemBackground"
                     android:contentDescription="@string/edit_this_card_information"
                     android:src="@drawable/ic_edit"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.4" />
+                    app:tint="@color/black" />
 
             <TextView
                     style="@style/TextAppearance.MaterialComponents.Caption"
@@ -128,6 +171,7 @@
                     android:id="@+id/btn_share"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="?attr/actionBarItemBackground"
                     android:contentDescription="@string/share_this_card"
                     android:src="@drawable/ic_share"
                     app:layout_constraintBottom_toBottomOf="@id/btn_edit"
@@ -147,6 +191,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

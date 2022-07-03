@@ -6,9 +6,9 @@ import androidx.core.animation.doOnEnd
 import com.google.android.material.card.MaterialCardView
 
 class ListItemBusinessCardAnimator {
-    companion object{
+    companion object {
         fun rotateCardView(cardView: MaterialCardView): ObjectAnimator? {
-            return ObjectAnimator.ofFloat(cardView, "rotationY", 89f).apply{
+            return ObjectAnimator.ofFloat(cardView, "rotationY", 89f).apply {
                 duration = 250
                 start()
                 doOnEnd {
@@ -22,7 +22,7 @@ class ListItemBusinessCardAnimator {
                         }
                     }
                     cardView.rotationY = -90f
-                    ObjectAnimator.ofFloat(cardView, "rotationY", 0f).apply{
+                    ObjectAnimator.ofFloat(cardView, "rotationY", 0f).apply {
                         duration = 250
                         start()
                     }
@@ -32,8 +32,8 @@ class ListItemBusinessCardAnimator {
 
         }
 
-        fun fadeOutCard(cardView: MaterialCardView) :ObjectAnimator {
-            return ObjectAnimator.ofFloat(cardView, "alpha", 0f).apply{
+        fun fadeOutCard(cardView: MaterialCardView): ObjectAnimator {
+            return ObjectAnimator.ofFloat(cardView, "alpha", 0f).apply {
                 duration = 375
                 start()
             }

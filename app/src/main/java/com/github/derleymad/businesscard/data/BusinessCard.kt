@@ -10,5 +10,5 @@ data class BusinessCard(
     val phone: String,
     val email: String,
     val company: String,
-    val customBackground:String
+    val customBackground: String
 )

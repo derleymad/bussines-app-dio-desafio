@@ -7,17 +7,19 @@ import com.github.derleymad.businesscard.data.BusinessCard
 import com.github.derleymad.businesscard.data.BusinessCardRepository
 
 class MainViewModel(private val businessCardRepository: BusinessCardRepository) : ViewModel() {
-    fun getAll() : LiveData<List<BusinessCard>> {
+    fun getAll(): LiveData<List<BusinessCard>> {
         return businessCardRepository.getAll()
     }
 
-    fun insert(businessCard: BusinessCard){
+    fun insert(businessCard: BusinessCard) {
         businessCardRepository.insert(businessCard)
     }
-    fun update(businessCard: BusinessCard){
+
+    fun update(businessCard: BusinessCard) {
         businessCardRepository.update(businessCard)
     }
-    fun delete(businessCard: BusinessCard){
+
+    fun delete(businessCard: BusinessCard) {
         businessCardRepository.delete(businessCard)
     }
 
@@ -26,10 +28,10 @@ class MainViewModel(private val businessCardRepository: BusinessCardRepository) 
     }
 }
 
-class MainViewModelFactory(private val repository: BusinessCardRepository):
-    ViewModelProvider.Factory{
+class MainViewModelFactory(private val repository: BusinessCardRepository) :
+    ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(MainViewModel::class.java))
+        if (modelClass.isAssignableFrom(MainViewModel::class.java))
             @Suppress("UNCHECKED_CAST")
             return MainViewModel(repository) as T
         throw IllegalArgumentException("Unknow ViewModel class")

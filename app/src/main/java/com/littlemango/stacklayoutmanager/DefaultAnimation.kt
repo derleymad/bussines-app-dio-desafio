@@ -3,14 +3,15 @@ package com.littlemango.stacklayoutmanager
 import android.view.View
 import com.littlemango.stacklayoutmanager.StackLayoutManager.ScrollOrientation
 
-class DefaultAnimation(scrollOrientation: ScrollOrientation, visibleCount: Int) : StackAnimation(scrollOrientation, visibleCount) {
+class DefaultAnimation(scrollOrientation: ScrollOrientation, visibleCount: Int) :
+    StackAnimation(scrollOrientation, visibleCount) {
 
     private var mScale = 0.95f
     private var mOutScale = 0.8f
     private var mOutRotation: Int
 
     init {
-        mOutRotation = when(scrollOrientation) {
+        mOutRotation = when (scrollOrientation) {
             ScrollOrientation.LEFT_TO_RIGHT, ScrollOrientation.RIGHT_TO_LEFT -> 10
             else -> 0
         }
@@ -90,7 +91,7 @@ class DefaultAnimation(scrollOrientation: ScrollOrientation, visibleCount: Int) 
     }
 
     private fun setItemPivotXY(scrollOrientation: ScrollOrientation, view: View) {
-        when(scrollOrientation) {
+        when (scrollOrientation) {
             ScrollOrientation.RIGHT_TO_LEFT -> {
                 view.pivotX = view.measuredWidth.toFloat()
                 view.pivotY = view.measuredHeight.toFloat() / 2
@@ -100,7 +101,7 @@ class DefaultAnimation(scrollOrientation: ScrollOrientation, visibleCount: Int) 
                 view.pivotY = view.measuredHeight.toFloat() / 2
             }
             ScrollOrientation.BOTTOM_TO_TOP -> {
-                view.pivotX = view.measuredWidth.toFloat() /2
+                view.pivotX = view.measuredWidth.toFloat() / 2
                 view.pivotY = view.measuredHeight.toFloat()
             }
             ScrollOrientation.TOP_TO_BOTTOM -> {
@@ -110,8 +111,12 @@ class DefaultAnimation(scrollOrientation: ScrollOrientation, visibleCount: Int) 
         }
     }
 
-    private fun rotationFirstVisibleItem(scrollOrientation: ScrollOrientation, view: View, rotation: Float) {
-        when(scrollOrientation) {
+    private fun rotationFirstVisibleItem(
+        scrollOrientation: ScrollOrientation,
+        view: View,
+        rotation: Float
+    ) {
+        when (scrollOrientation) {
             ScrollOrientation.RIGHT_TO_LEFT -> view.rotationY = rotation
             ScrollOrientation.LEFT_TO_RIGHT -> view.rotationY = -rotation
             ScrollOrientation.BOTTOM_TO_TOP -> view.rotationX = -rotation

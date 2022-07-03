@@ -17,11 +17,10 @@ import com.github.derleymad.businesscard.R
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
-import java.security.AccessController.getContext
 
 class Image {
-    companion object{
-        fun share (context: Context, card: View) {
+    companion object {
+        fun share(context: Context, card: View) {
             val bitmap = getScreenShotFromView(card)
             bitmap?.let {
                 saveMediaToStorage(context, it)
@@ -34,7 +33,7 @@ class Image {
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 context.contentResolver?.also { resolver ->
-                    val contentValues = ContentValues().apply{
+                    val contentValues = ContentValues().apply {
                         put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
                         put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
                         put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
@@ -59,11 +58,13 @@ class Image {
             }
             fileOS?.use {
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
-                Toast.makeText(context, R.string.capture_image_successful, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.capture_image_successful, Toast.LENGTH_SHORT)
+                    .show()
             }
         }
+
         private fun shareIntent(context: Context, imageUri: Uri) {
-            val shareIntent: Intent = Intent().apply{
+            val shareIntent: Intent = Intent().apply {
                 addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_STREAM, imageUri)
@@ -88,7 +89,7 @@ class Image {
                 )
                 val canvas = Canvas(screenshot)
                 card.draw(canvas)
-            }catch (err: Exception){
+            } catch (err: Exception) {
                 Log.e("Screenshot", "Erro ao tentar capturar o screenshot" + err.message)
             }
             return screenshot

@@ -14,12 +14,13 @@ import com.jaredrummler.android.colorpicker.ColorPickerDialog
 import com.jaredrummler.android.colorpicker.ColorPickerDialogListener
 
 class AddBusinessCardActivity : AppCompatActivity(), ColorPickerDialogListener {
-    private val addCardBinding : ActivityAddBusinessCardBinding by lazy{
+    private val addCardBinding: ActivityAddBusinessCardBinding by lazy {
         ActivityAddBusinessCardBinding.inflate(layoutInflater)
     }
-    private val mainViewModel: MainViewModel by viewModels{
+    private val mainViewModel: MainViewModel by viewModels {
         MainViewModelFactory((application as App).repository)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(addCardBinding.root)
@@ -27,13 +28,14 @@ class AddBusinessCardActivity : AppCompatActivity(), ColorPickerDialogListener {
         insertListeners()
         changeBtnColorValues(customBackgroundColor)
     }
-    private var customBackgroundColor:Int = Color.CYAN
+
+    private var customBackgroundColor: Int = Color.CYAN
     private var cardId = 0
     private var dialogId = 0
 
-    private fun setUpCard(){
-        cardId = intent.getIntExtra("cardId",0)
-        if (cardId == 0){
+    private fun setUpCard() {
+        cardId = intent.getIntExtra("cardId", 0)
+        if (cardId == 0) {
             return
         }
         Thread {
@@ -54,8 +56,9 @@ class AddBusinessCardActivity : AppCompatActivity(), ColorPickerDialogListener {
             }
         }.start()
     }
-    private fun insertListeners(){
-        addCardBinding.btnClose.setOnClickListener{
+
+    private fun insertListeners() {
+        addCardBinding.btnClose.setOnClickListener {
             finish()
         }
         addCardBinding.btnColor.setOnClickListener {
@@ -74,12 +77,12 @@ class AddBusinessCardActivity : AppCompatActivity(), ColorPickerDialogListener {
                 phone = addCardBinding.tilPhone.editText?.text.toString(),
                 email = addCardBinding.tilEmail.editText?.text.toString(),
                 company = addCardBinding.tilCompany.editText?.text.toString(),
-                customBackground =  getString(
+                customBackground = getString(
                     R.string.color_hexadecimal,
                     Integer.toHexString(customBackgroundColor).uppercase()
                 )
             )
-            if(cardId == 0){
+            if (cardId == 0) {
                 mainViewModel.insert(businessCard)
             } else {
                 mainViewModel.update(businessCard)
@@ -90,9 +93,10 @@ class AddBusinessCardActivity : AppCompatActivity(), ColorPickerDialogListener {
         }
     }
 
-    private fun changeBtnColorValues(color: Int){
+    private fun changeBtnColorValues(color: Int) {
         addCardBinding.btnColor.setBackgroundColor(color)
-        addCardBinding.btnColor.text = getString(R.string.color_value, Integer.toHexString(color).uppercase())
+        addCardBinding.btnColor.text =
+            getString(R.string.color_value, Integer.toHexString(color).uppercase())
         customBackgroundColor = color
     }
 

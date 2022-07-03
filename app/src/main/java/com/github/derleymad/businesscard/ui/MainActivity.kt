@@ -22,15 +22,15 @@ class MainActivity : AppCompatActivity() {
     private val mainBinding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
-    private val mainViewModel: MainViewModel by viewModels{
+    private val mainViewModel: MainViewModel by viewModels {
         MainViewModelFactory((application as App).repository)
     }
-    private val adapter: BusinessCardAdapter by lazy{
+    private val adapter: BusinessCardAdapter by lazy {
         BusinessCardAdapter()
     }
 
     private val layoutManager: StackLayoutManager by lazy {
-        StackLayoutManager(ScrollOrientation.TOP_TO_BOTTOM,7).apply {
+        StackLayoutManager(ScrollOrientation.TOP_TO_BOTTOM, 7).apply {
             setItemOffset(32)
         }
     }
@@ -61,10 +61,12 @@ class MainActivity : AppCompatActivity() {
             1
         )
     }
-    private fun setUpListLayout(){
+
+    private fun setUpListLayout() {
         mainBinding.rvCardList.layoutManager = layoutManager
         mainBinding.rvCardList.adapter = adapter
     }
+
     private fun insertListeners() {
         mainBinding.fbAddCard.setOnClickListener {
             val intent = Intent(
@@ -105,10 +107,10 @@ class MainActivity : AppCompatActivity() {
                     setMessage(R.string.are_you_sure_you_want_delete_this_card)
                     setCancelable(false)
                     setPositiveButton(R.string.yes) { _, _ ->
-                       ListItemBusinessCardAnimator.fadeOutCard(mCardView).doOnEnd {
-                           mainBinding.rvCardList.removeView(layout)
-                           mainViewModel.delete(businessCard)
-                       }
+                        ListItemBusinessCardAnimator.fadeOutCard(mCardView).doOnEnd {
+                            mainBinding.rvCardList.removeView(layout)
+                            mainViewModel.delete(businessCard)
+                        }
                     }
                     setNegativeButton(R.string.no) { dialog, _ -> dialog.dismiss() }
                     create()
@@ -116,12 +118,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun getAllBusinessCards(){
+
+    private fun getAllBusinessCards() {
         mainViewModel.getAll().observe(
-            this, { businessCards -> run {
+            this
+        ) { businessCards ->
+            run {
                 adapter.submitList(businessCards)
-                }
             }
-        )
+        }
     }
 }

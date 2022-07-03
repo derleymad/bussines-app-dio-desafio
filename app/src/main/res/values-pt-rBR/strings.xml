@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Cartão de notícias</string>
-    <string name="business_card">Cartão de notícias</string>
+    <string name="app_name">Cartão de visitas</string>
+    <string name="business_card">Cartão de visitas</string>
     <string name="add_card">Adicionar cartão</string>
     <string name="close">Fechar</string>
     <string name="new_business_card">Novo cartão</string>

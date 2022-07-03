@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [BusinessCard::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun businessCardDao() : BusinessCardDao
+    abstract fun businessCardDao(): BusinessCardDao
 
     companion object {
         @Volatile

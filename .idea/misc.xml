@@ -9,11 +9,13 @@
         <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/drawable/ic_close.xml" value="0.136" />
         <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/drawable/ic_delete.xml" value="0.136" />
         <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/drawable/ic_edit.xml" value="0.136" />
+        <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/drawable/ic_email.xml" value="0.1" />
         <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/drawable/ic_launcher_background.xml" value="0.136" />
         <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/drawable/ic_share.xml" value="0.136" />
-        <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/layout/activity_add_business_card.xml" value="0.22" />
-        <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/layout/list_item_business_card.xml" value="0.25" />
+        <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/font/title.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/layout/activity_add_business_card.xml" value="0.25" />
+        <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/layout/activity_main.xml" value="0.24328593996840442" />
+        <entry key="..\:/Users/wm/Desktop/Projetos/BusinessCard/app/src/main/res/layout/list_item_business_card.xml" value="0.33" />
       </map>
     </option>
   </component>

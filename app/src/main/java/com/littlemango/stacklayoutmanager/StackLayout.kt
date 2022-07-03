@@ -2,9 +2,11 @@ package com.littlemango.stacklayoutmanager
 
 import android.view.View
 
-abstract class StackLayout(scrollOrientation: StackLayoutManager.ScrollOrientation,
-                           visibleCount: Int,
-                           perItemOffset: Int) {
+abstract class StackLayout(
+    scrollOrientation: StackLayoutManager.ScrollOrientation,
+    visibleCount: Int,
+    perItemOffset: Int
+) {
 
     protected val mScrollOrientation = scrollOrientation
     protected var mVisibleCount = visibleCount
@@ -24,11 +26,13 @@ abstract class StackLayout(scrollOrientation: StackLayoutManager.ScrollOrientati
      * @param itemView 当前的 itemView.
      * @param position 当前 itemView 对应的位置，position = 0 until visibleCount.
      */
-    abstract fun doLayout(stackLayoutManager: StackLayoutManager,
-                          scrollOffset: Int,
-                          firstMovePercent: Float,
-                          itemView: View,
-                          position: Int)
+    abstract fun doLayout(
+        stackLayoutManager: StackLayoutManager,
+        scrollOffset: Int,
+        firstMovePercent: Float,
+        itemView: View,
+        position: Int
+    )
 
     abstract fun requestLayout()
 }

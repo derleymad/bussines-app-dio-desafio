@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.github.derleymad.businesscard.data.BusinessCard
 import com.github.derleymad.businesscard.databinding.ListItemBusinessCardBinding
 
-class BusinessCardAdapter : ListAdapter<BusinessCard, BusinessCardAdapter.ViewHolder> (DiffCallback()) {
+class BusinessCardAdapter :
+    ListAdapter<BusinessCard, BusinessCardAdapter.ViewHolder>(DiffCallback()) {
     var cardClickListener: (View) -> Unit = {}
     var shareListener: (View) -> Unit = {}
     var deleteListener: (View, BusinessCard) -> Unit = { _, _: BusinessCard -> }
@@ -28,26 +29,26 @@ class BusinessCardAdapter : ListAdapter<BusinessCard, BusinessCardAdapter.ViewHo
         holder.bind(getItem(position))
     }
 
-    inner class ViewHolder (
+    inner class ViewHolder(
         private val listItemBinding: ListItemBusinessCardBinding
-        ): RecyclerView.ViewHolder(listItemBinding.root) {
-        fun bind(item: BusinessCard){
+    ) : RecyclerView.ViewHolder(listItemBinding.root) {
+        fun bind(item: BusinessCard) {
             try {
                 val color = Color.parseColor(item.customBackground)
                 listItemBinding.cvCard.setCardBackgroundColor(color)
                 listItemBinding.btnEdit.setBackgroundColor(color)
                 listItemBinding.btnShare.setBackgroundColor(color)
                 listItemBinding.btnDelete.setBackgroundColor(color)
-            }catch (err: Exception){
+            } catch (err: Exception) {
                 Log.e("CARD_ADAPTER", err.message.toString())
-            }catch (err: IllegalArgumentException ){
+            } catch (err: IllegalArgumentException) {
                 Log.e("CARD_ADAPTER", err.message.toString())
             }
             listItemBinding.tvName.text = item.name
             listItemBinding.tvPhone.text = item.phone
             listItemBinding.tvEmail.text = item.email
             listItemBinding.tvCompany.text = item.company
-            listItemBinding.btnShare.setOnClickListener{
+            listItemBinding.btnShare.setOnClickListener {
                 shareListener(listItemBinding.cvCard)
             }
             listItemBinding.cvCard.setOnClickListener {
@@ -62,9 +63,10 @@ class BusinessCardAdapter : ListAdapter<BusinessCard, BusinessCardAdapter.ViewHo
         }
     }
 }
-class DiffCallback: DiffUtil.ItemCallback<BusinessCard>(){
+
+class DiffCallback : DiffUtil.ItemCallback<BusinessCard>() {
     override fun areItemsTheSame(oldItem: BusinessCard, newItem: BusinessCard): Boolean {
-        return  oldItem.id == newItem.id &&
+        return oldItem.id == newItem.id &&
                 oldItem.name == newItem.name &&
                 oldItem.email == newItem.email &&
                 oldItem.company == newItem.company &&
@@ -72,7 +74,7 @@ class DiffCallback: DiffUtil.ItemCallback<BusinessCard>(){
     }
 
     override fun areContentsTheSame(oldItem: BusinessCard, newItem: BusinessCard): Boolean {
-        return  oldItem.id == newItem.id &&
+        return oldItem.id == newItem.id &&
                 oldItem.name == newItem.name &&
                 oldItem.email == newItem.email &&
                 oldItem.company == newItem.company &&

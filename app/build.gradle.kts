@@ -10,7 +10,7 @@ android {
     buildToolsVersion = "30.0.3"
 
     defaultConfig {
-        applicationId = "com.github.welblade.businesscard"
+        applicationId = "com.github.derleymad.businesscard"
         minSdk = 21
         targetSdk = 30
         versionCode = 1
