@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cartão de notícias</string>
+    <string name="business_card">Cartão de notícias</string>
+    <string name="add_card">Adicionar cartão</string>
+    <string name="close">Fechar</string>
+    <string name="new_business_card">Novo cartão</string>
+    <string name="name">Nome</string>
+    <string name="phone">Telefone</string>
+    <string name="email">Email</string>
+    <string name="company">Empresa</string>
+    <string name="color">Cor</string>
+    <string name="color_hexadecimal">#%1$s</string>
+    <string name="color_value">Cor do cartão: #%1$s</string>
+    <string name="save_card">Salvar cartão</string>
+    <string name="save_card_successful">O seu cartão foi salvo!</string>
+    <string name="capture_image_successful">O cartão foi compartilhado!</string>
+    <string name="share">Compartilhar</string>
+    <string name="are_you_sure_you_want_delete_this_card">Tem certeza que quer deletar este cartão?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="edit_business_card">Editar cartão</string>
+    <string name="delete_this_business_card">Deletar esse cartão</string>
+    <string name="edit_this_card_information">Editar a informação deste cartão</string>
+    <string name="share_this_card">Compartilhar esse cartão</string>
+    <string name="remove">Remover</string>
+    <string name="edit">Editar</string>
+</resources>

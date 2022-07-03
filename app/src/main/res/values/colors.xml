@@ -2,14 +2,23 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="errorDelete">#B00020</color>
 
+    <!--TEMA ESCURO-->
+    <color name="primaryColorDarkMode">#fafafa</color>
+    <color name="primaryLightColorDarkMode">#ffffff</color>
+    <color name="primaryDarkColorDarkMode">#c7c7c7</color>
+
+    <color name="primaryTextColorDarkMode">#000000</color>
+
+    <!--TEMA CLARO-->
     <color name="primaryColor">#212121</color>
     <color name="primaryLightColor">#484848</color>
     <color name="primaryDarkColor">#000000</color>
 
-    <color name="secondaryColor">#e53935</color>
-    <color name="secondaryLightColor">#ff6f60</color>
-    <color name="secondaryDarkColor">#ab000d</color>
+    <color name="secondaryColor">#f44336</color>
+    <color name="secondaryLightColor">#ff7961</color>
+    <color name="secondaryDarkColor">#ba000d</color>
 
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#000000</color>
