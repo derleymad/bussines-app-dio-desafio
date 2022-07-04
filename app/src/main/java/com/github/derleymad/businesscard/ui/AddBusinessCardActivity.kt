@@ -27,9 +27,10 @@ class AddBusinessCardActivity : AppCompatActivity(), ColorPickerDialogListener {
         setUpCard()
         insertListeners()
         changeBtnColorValues(customBackgroundColor)
+
     }
 
-    private var customBackgroundColor: Int = Color.CYAN
+    private var customBackgroundColor: Int = Color.LTGRAY
     private var cardId = 0
     private var dialogId = 0
 

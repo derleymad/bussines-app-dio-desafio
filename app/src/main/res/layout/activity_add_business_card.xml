@@ -33,16 +33,23 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:hint="@string/name"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -50,16 +57,23 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:hint="@string/phone"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_name">
+
+            app:layout_constraintTop_toBottomOf="@+id/til_name"
+            app:startIconDrawable="@drawable/ic_phone">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -67,10 +81,16 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:hint="@string/email"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_phone">
+            app:layout_constraintTop_toBottomOf="@+id/til_phone"
+            app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_email"
@@ -84,10 +104,16 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:hint="@string/company"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_email">
+            app:layout_constraintTop_toBottomOf="@+id/til_email"
+            app:startIconDrawable="@drawable/ic_business">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_company"
@@ -107,7 +133,8 @@
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_company" />
+            app:layout_constraintTop_toBottomOf="@id/til_company"
+            android:drawableLeft="@drawable/ic_colors"/>
 
     <Button
             android:id="@+id/btn_save"
@@ -118,5 +145,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_title"
+            app:srcCompat="@drawable/ic_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,12 +8,12 @@
                     android:duration="@android:integer/config_shortAnimTime"
                     android:propertyName="translationZ"
                     android:valueTo="8dp"
-                    android:valueType="floatType" />
+                    android:valueType="floatType"/>
             <objectAnimator
                     android:duration="@android:integer/config_shortAnimTime"
                     android:propertyName="rotationY"
                     android:valueTo="180"
-                    android:valueType="floatType" />
+                    android:valueType="floatType"/>
         </set>
     </item>
     <item>
@@ -22,12 +22,12 @@
                     android:duration="@android:integer/config_shortAnimTime"
                     android:propertyName="translationZ"
                     android:valueTo="0"
-                    android:valueType="floatType" />
+                    android:valueType="floatType"/>
             <objectAnimator
                     android:duration="@android:integer/config_shortAnimTime"
                     android:propertyName="rotationY"
                     android:valueTo="0"
-                    android:valueType="floatType" />
+                    android:valueType="floatType"/>
         </set>
     </item>
 </set>

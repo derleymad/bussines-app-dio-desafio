@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val layoutManager: StackLayoutManager by lazy {
-        StackLayoutManager(ScrollOrientation.TOP_TO_BOTTOM, 7).apply {
-            setItemOffset(32)
+        StackLayoutManager(ScrollOrientation.TOP_TO_BOTTOM, 4).apply {
+            setItemOffset(22)
         }
     }
 
@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         setUpListLayout()
         insertListeners()
     }
+
 
     override fun onStart() {
         super.onStart()
