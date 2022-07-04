@@ -21,14 +21,14 @@ Além disso, quando feito o seu card, ele será salvo na base de dados, e portan
 quando sair do aplicativo.
 
 ## Screenshots
-
+ <img src="images/gif.gif" width="100" />
 <p float="left">
   <img src="images/0-splash.jpeg" width="100" />
   <img src="images/1-home.jpeg" width="100" /> 
   <img src="images/2-novocartao.jpeg" width="100" />
   <img src="images/2-pickcolor.jpeg" width="100" />
   <img src="images/3-inverso.jpeg" width="100" />
-  <img src="images/gif.gif" width="100" />
+ 
 </p>
 
 ## Tecnologia
